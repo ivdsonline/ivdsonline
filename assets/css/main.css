@@ -1,0 +1,613 @@
+@font-face {
+    font-family: IRANSansX;
+    font-style: normal;
+    font-weight: bold;
+    src:
+        url("fonts/woff/IRANSansX-Bold.woff") format("woff"),
+        url("fonts/woff2/IRANSansX-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-style: normal;
+    font-weight: normal;
+    src:
+        url("fonts/woff/IRANSansX-Regular.woff") format("woff"),
+        url("fonts/woff2/IRANSansX-Regular.woff2") format("woff2");
+}
+body {
+    font-family: "IRANSansX", sans-serif;
+}
+.gradient-bg {
+    background: linear-gradient(135deg, #009bc1 0%, #007a9a 100%);
+}
+.discount-card,
+.google-promo-card {
+    background: white;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #009bc1;
+}
+.discount-card::before,
+.google-promo-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 155, 193, 0.1) 0%,
+        transparent 70%
+    );
+    animation: shimmer 4s infinite;
+}
+@keyframes shimmer {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.price-card {
+    transition: all 0.3s ease;
+}
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 155, 193, 0.2);
+}
+.popular-badge,
+.google-badge {
+    background: linear-gradient(45deg, #009bc1, #007a9a);
+}
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.floating-animation {
+    animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.pricing-table th {
+    background-color: #009bc1;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.pricing-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+.pricing-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+.order-btn {
+    background-color: #009bc1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+.order-btn:hover {
+    background-color: #007a9a;
+}
+.highlighted-row {
+    background-color: #e6f7ff !important;
+}
+.gradient-button {
+    background: linear-gradient(45deg, #009bc1, #007a9a);
+    transition: all 0.3s ease;
+}
+.gradient-button:hover {
+    background: linear-gradient(45deg, #007a9a, #005f7a);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 155, 193, 0.3);
+}
+.code-highlight {
+    background: linear-gradient(45deg, #009bc1, #007a9a);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-block;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(0, 155, 193, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 155, 193, 0.8);
+    }
+}
+.floating-contact {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    animation: float-btn 3s ease-in-out infinite;
+    text-decoration: none;
+}
+@keyframes float-btn {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.contact-btn.telegram {
+    background-color: #0088cc;
+    animation-delay: 0s;
+}
+.contact-btn.whatsapp {
+    background-color: #25d366;
+    animation-delay: 0.3s;
+}
+.contact-btn.phone {
+    background-color: #009bc1;
+    animation-delay: 0.6s;
+}
+.blink {
+    animation: blink-animation 1.5s infinite;
+}
+@keyframes blink-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.trust-badge svg {
+    margin-left: 8px;
+}
+.logo {
+    width: 120px;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .floating-contact {
+        left: 10px;
+        gap: 10px;
+    }
+    .contact-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .pricing-table {
+        font-size: 14px;
+    }
+    .pricing-table th,
+    .pricing-table td {
+        padding: 8px 4px;
+    }
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .text-4xl {
+        font-size: 2rem;
+    }
+    .text-3xl {
+        font-size: 1.875rem;
+    }
+}
+@media (max-width: 640px) {
+    .grid-cols-1.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    .text-6xl {
+        font-size: 3rem;
+    }
+    .px-8 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+* Cookie Consent Banner Styles */ .cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    padding: 20px;
+    z-index: 10000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.cookie-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cookie-btn.accept {
+    background: #28a745;
+    color: white;
+}
+
+.cookie-btn.accept:hover {
+    background: #218838;
+}
+
+.cookie-btn.reject {
+    background: #6c757d;
+    color: white;
+}
+
+.cookie-btn.reject:hover {
+    background: #5a6268;
+}
+
+.cookie-link {
+    color: #007bff;
+    text-decoration: underline;
+    padding: 10px 15px;
+}
+
+.cookie-link:hover {
+    color: #0056b3;
+}
+
+/* Existing styles */
+:root {
+    --primary: #1e40af;
+    --secondary: #1f2937;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.max-w-container {
+    max-width: 1200px;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+/* Floating Contact Buttons */
+.floating-contact {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn.telegram {
+    background: #0088cc;
+}
+
+.contact-btn.whatsapp {
+    background: #25d366;
+}
+
+.contact-btn.phone {
+    background: #007bff;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.blink {
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.floating-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Promo Card */
+.google-promo-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border: 2px solid #e2e8f0;
+}
+
+.google-badge {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+.popular-badge {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+.code-highlight {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1f2937;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid #f59e0b;
+}
+
+.gradient-button {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Pricing Table */
+.pricing-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.pricing-table th {
+    background: var(--primary);
+    color: white;
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pricing-table td {
+    padding: 16px 12px;
+    text-align: center;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 14px;
+}
+
+.pricing-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.pricing-table .highlighted-row {
+    background-color: #fef3c7;
+    border: 2px solid #f59e0b;
+}
+
+.pricing-table .highlighted-row:hover {
+    background-color: #fde68a;
+}
+
+.order-btn {
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.order-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+/* Price Cards */
+.price-card {
+    transition: all 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Trust Badges */
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+/* Logo */
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-contact {
+        left: 10px;
+    }
+
+    .contact-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .cookie-content {
+        padding: 0 10px;
+    }
+
+    .cookie-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cookie-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing-table th,
+    .pricing-table td {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+
+    .trust-badge {
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+    }
+}
